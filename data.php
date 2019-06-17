@@ -40,7 +40,7 @@ function gen_player($id){
 
   // array giocatori
   $players =[
-    'id' => $id,
+    'id_select' => $id,
     'nome:' => $id_player,
     'punti_fatti:'=> rand(0, 40),
     'rinbalzi:'=> rand(0, 200),

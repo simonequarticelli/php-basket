@@ -32,12 +32,17 @@ include 'data.php';
       <?php
       for ($i=0; $i < 10; $i++) {
         echo '<div class="card"><img src="https://as2.ftcdn.net/jpg/01/73/53/01/500_F_173530100_65sHLVn8zF1AJr8EJjP78VGl8VvYfXxb.jpg" alt="">
-        id giocatore: '.gen_player($id)['nome:'].'<br>';
-        echo 'punti fatti: '.gen_player($id)['punti_fatti:'].'<br>';
-        echo 'rinbalzi: '.gen_player($id)['rinbalzi:'].'<br>';
-        echo 'falli: '.gen_player($id)['falli:'].'<br>';
-        echo 'tiri da 2 punti(%): '.gen_player($id)['tiri_da_2_punti(%):'].'<br>';
-        echo 'tiri da 3 punti(%): '.gen_player($id)['tiri_da_3_punti(%):'].'<br></div>';
+        <h4>id giocatore: '.gen_player($id)['nome:'].'</h4><br>';
+
+        echo '<div class="score">
+        punti fatti: '.gen_player($id)['punti_fatti:'].'<br>
+        rinbalzi: '.gen_player($id)['rinbalzi:'].'<br>
+        falli: '.gen_player($id)['falli:'].'<br>
+        tiri da 2 punti(%): '.gen_player($id)['tiri_da_2_punti(%):'].'<br>
+        tiri da 3 punti(%): '.gen_player($id)['tiri_da_3_punti(%):'].'<br></div>
+
+        </div>';
+
       }?>
     </div>
 
