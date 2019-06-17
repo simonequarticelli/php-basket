@@ -6,7 +6,9 @@ Potete inizialmente stamparli come le card uno sotto (o a fianco) all'altro e po
 se avete tempo e voglia, potete aggiungere il click sul codice del giocatore che
 mostra i dati solo del giocatore selezionato (con jQuery ovviamente) -->
 
-<?php  ?>
+<?php
+include 'data.php'; 
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
