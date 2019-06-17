@@ -1,0 +1,28 @@
+.card__container{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  .card{
+    border-radius: 5px;
+    padding:20px;
+    margin:20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    text-align: center;
+    flex-direction: column;
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    transition: .3s;
+    cursor: pointer;
+    background-color: white;
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    img{
+      width: 200px;
+      height: auto;
+    }
+  }
+}
