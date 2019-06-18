@@ -8,7 +8,7 @@ mostra i dati solo del giocatore selezionato (con jQuery ovviamente) -->
 
 <?php
 
-function gen_player($id){
+function gen_player(){
   //creo array alfabeto
   foreach (range('A', 'Z') as $letter){
     $array_alfabeto[] = $letter;
@@ -38,20 +38,38 @@ function gen_player($id){
 
   // print_r($id_player);
 
+  $rnd_40 = rand(0, 40);
+  $rdn_200 = rand(0, 200);
+  $rdn_5 = rand(0, 5);
+  $rdn_perc = number_format(rand(0, 1000) / 10, 1);
+
   // array giocatori
   $players =[
-    'id_select' => $id,
     'nome:' => $id_player,
-    'punti_fatti:'=> rand(0, 40),
-    'rinbalzi:'=> rand(0, 200),
-    'falli:'=> rand(0, 5),
-    'tiri_da_2_punti(%):'=> number_format(rand(0, 1000) / 10, 1),
-    'tiri_da_3_punti(%):'=> number_format(rand(0, 1000) / 10, 1)
+    'punti_fatti:'=> $rnd_40,
+    'rinbalzi:'=> $rdn_200,
+    'falli:'=> $rdn_5,
+    'tiri_da_2_punti(%):'=> $rdn_perc,
+    'tiri_da_3_punti(%):'=> $rdn_perc
   ];
 
   // var_dump($players);
 
   return $players;
 };
+
+$giocatori = [];
+for ($i=0; $i < 100; $i++) {
+  $giocatore = gen_player();
+  if (!array_key_exsists($giocatore['nome:'], $giocatori)) {
+    $giocatori[$giocatore['nome:']] = $giocatore;
+  }
+  // giocatore['nome']  XXXxxx
+  // esiste la chiave xxxx nell'array giocatori
+  // se  nonesiste creao l achiave all'array giocatori e laassegno al giocatore
+}
+
+print_r($giocatori);exit();
+
 
 ?>

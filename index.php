@@ -23,23 +23,25 @@ include 'data.php';
     <!-- DA TERMINARE  -->
     <select class="select_id_players" name="">
       <option>ID PLAYERS</option>
-      <?php for ($i=1; $i < 101; $i++) {
-        echo "<option value=".$i.">".gen_player($i)['nome:']."</option>";
+      <?php foreach ($giocatori as $key => $value){
+        echo "<option value=".$value['nome:'].">".$value['nome:']."</option>";
       } ?>
     </select>
 
     <div class="card__container">
       <?php
-      for ($i=0; $i < 10; $i++) {
+      foreach ($giocatori as $key => $value) {
+
+
         echo '<div class="card"><img src="https://as2.ftcdn.net/jpg/01/73/53/01/500_F_173530100_65sHLVn8zF1AJr8EJjP78VGl8VvYfXxb.jpg" alt="">
-        <h4>id giocatore: '.gen_player($id)['nome:'].'</h4><br>';
+        <h4>id giocatore: '.$value['nome:'].'</h4><br>';
 
         echo '<div class="score">
-        punti fatti: '.gen_player($id)['punti_fatti:'].'<br>
-        rinbalzi: '.gen_player($id)['rinbalzi:'].'<br>
-        falli: '.gen_player($id)['falli:'].'<br>
-        tiri da 2 punti(%): '.gen_player($id)['tiri_da_2_punti(%):'].'<br>
-        tiri da 3 punti(%): '.gen_player($id)['tiri_da_3_punti(%):'].'<br></div>
+        punti fatti: '.$value['punti_fatti:'].'<br>
+        rinbalzi: '.$value['rinbalzi:'].'<br>
+        falli: '.$value['falli:'].'<br>
+        tiri da 2 punti(%): '.$value['tiri_da_2_punti(%):'].'<br>
+        tiri da 3 punti(%): '.$value['tiri_da_3_punti(%):'].'<br></div>
 
         </div>';
 
