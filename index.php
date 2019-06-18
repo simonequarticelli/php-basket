@@ -8,6 +8,10 @@ mostra i dati solo del giocatore selezionato (con jQuery ovviamente) -->
 
 <?php
 include 'data.php';
+$giocatori = [];
+for ($i=0; $i < 100; $i++) {
+  $giocatori[$i] = gen_player();
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,28 +24,25 @@ include 'data.php';
   </head>
   <body>
 
-    <!-- DA TERMINARE  -->
     <select class="select_id_players" name="">
       <option>ID PLAYERS</option>
-      <?php foreach ($giocatori as $key => $value){
-        echo "<option value=".$value['nome:'].">".$value['nome:']."</option>";
+      <?php for ($i=0; $i < 100; $i++) {
+        echo "<option value=".$giocatori[$i]['nome:'].">".$giocatori[$i]['nome:']."</option>";
       } ?>
     </select>
 
     <div class="card__container">
       <?php
-      foreach ($giocatori as $key => $value) {
-
-
+      for ($i=0; $i < 100; $i++) {
         echo '<div class="card"><img src="https://as2.ftcdn.net/jpg/01/73/53/01/500_F_173530100_65sHLVn8zF1AJr8EJjP78VGl8VvYfXxb.jpg" alt="">
-        <h4>id giocatore: '.$value['nome:'].'</h4><br>';
+        <h4>id giocatore: '.$giocatori[$i]['nome:'].'</h4><br>';
 
         echo '<div class="score">
-        punti fatti: '.$value['punti_fatti:'].'<br>
-        rinbalzi: '.$value['rinbalzi:'].'<br>
-        falli: '.$value['falli:'].'<br>
-        tiri da 2 punti(%): '.$value['tiri_da_2_punti(%):'].'<br>
-        tiri da 3 punti(%): '.$value['tiri_da_3_punti(%):'].'<br></div>
+        punti fatti: '.$giocatori[$i]['punti_fatti:'].'<br>
+        rinbalzi: '.$giocatori[$i]['rinbalzi:'].'<br>
+        falli: '.$giocatori[$i]['falli:'].'<br>
+        tiri da 2 punti(%): '.$giocatori[$i]['tiri_da_2_punti(%):'].'<br>
+        tiri da 3 punti(%): '.$giocatori[$i]['tiri_da_3_punti(%):'].'<br></div>
 
         </div>';
 

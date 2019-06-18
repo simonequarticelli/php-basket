@@ -58,18 +58,4 @@ function gen_player(){
   return $players;
 };
 
-$giocatori = [];
-for ($i=0; $i < 100; $i++) {
-  $giocatore = gen_player();
-  if (!array_key_exsists($giocatore['nome:'], $giocatori)) {
-    $giocatori[$giocatore['nome:']] = $giocatore;
-  }
-  // giocatore['nome']  XXXxxx
-  // esiste la chiave xxxx nell'array giocatori
-  // se  nonesiste creao l achiave all'array giocatori e laassegno al giocatore
-}
-
-print_r($giocatori);exit();
-
-
 ?>
